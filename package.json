@@ -1,0 +1,14 @@
+{
+    "name": "CodingScapeTestChallenge",
+    "version": "0.0.1",
+    "dependencies": {
+        "ansi-colors": "^4.1.3",
+        "lodash": "^4.17.21",
+        "typescript": "^4.8.3"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.185",
+        "@types/node": "^18.11.9",
+        "parcel": "^2.7.0"
+    }
+}
