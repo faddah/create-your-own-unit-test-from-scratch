@@ -5,7 +5,9 @@
     "target": "ES6",
     "watch": true,
     "lib": ["DOM", "ES2017"],
-    "baseUrl": "../typescript-videos",
+    "baseUrl": "../codingscape-challenge",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
     "experimentalDecorators": true
   }
 }

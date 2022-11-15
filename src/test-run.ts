@@ -3,11 +3,11 @@ const c = require('ansi-colors');
 console.log(c.blue.italic(`is this working?`));
 
 //the "expect" comparison
-const expect = (value: number): any => {
-	this.value = value;
+function expect(value: number): any {
+	// this.value = value;
 	const toEqual = (compareValue: number): boolean => {
-		return this.value === compareValue;
-	}
+		return value === compareValue;
+	};
 	return { toEqual };
 }
 
