@@ -1,5 +1,5 @@
 const c = require('ansi-colors');
-console.log(c.blue(`is this working?`));
+console.log(c.blue(c.italic(`is this working?`)));
 //the "expect" comparison
 const expect = (value) => {
     this.value = value;
@@ -10,6 +10,6 @@ const expect = (value) => {
 };
 // the "it" test
 const it = (testString, callback) => {
-    console.log(c.green(`${testString}: ${callback() ? `PASSED.` : c.red(`FAILED!`)}`));
+    console.log(c.green(`${testString}: ${callback() ? c.bold(`PASSED.`) : c.red(c.bold(`FAILED!`))}`));
 };
-it('adds two numbers', () => expect(1 + 1).toEqual(2));
+it('adds two numbers', () => expect(1 + 1).toEqual(3));
