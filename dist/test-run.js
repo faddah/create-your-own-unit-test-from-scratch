@@ -12,4 +12,4 @@ const expect = (value) => {
 const it = (testString, callback) => {
     console.log(c.green(`${testString}: ${callback() ? c.bold(`PASSED.`) : c.red(c.bold(`FAILED!`))}`));
 };
-it('adds two numbers', () => expect(1 + 1).toEqual(3));
+it('adds two numbers', () => expect(1 + 1).toEqual(2));

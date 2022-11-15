@@ -16,4 +16,4 @@ const it = (testString: string, callback: Function): void => {
 	console.log(c.green(`${testString}: ${callback() ? c.bold(`PASSED.`) : c.red(c.bold(`FAILED!`))}`));
 };
 
-it('adds two numbers', (): void => expect(1 + 1).toEqual(3));
+it('adds two numbers', (): void => expect(1 + 1).toEqual(2));
