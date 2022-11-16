@@ -15,4 +15,4 @@ const it = (testString: string, callback: Function): void => {
 	console.log(c.green(`${testString}: ${callback() ? c.bold(`PASSED.`) : c.red.bold(`FAILED!`)}`));
 };
 
-it('adds two numbers', (): void => expect(1 + 1).toEqual(5));
+it('adds two numbers', (): void => expect(1 + 1).toEqual(2));
