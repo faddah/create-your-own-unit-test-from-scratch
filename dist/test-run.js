@@ -2,13 +2,23 @@ const c = require('ansi-colors');
 console.log(c.blue.italic(`is this working?`));
 //the "expect" comparison
 const expect = (value) => {
+    let testArray;
+    Array.isArray(value) ? testArray = value.slice() : testArray = null;
     const toEqual = (compareValue) => {
         return value === compareValue;
     };
-    return { toEqual };
+    const toHaveLength = (arrayLength) => {
+        return testArray.length === arrayLength;
+    };
+    return {
+        toEqual,
+        toHaveLength
+    };
 };
 // the "it" test
 const it = (testString, callback) => {
     console.log(c.green(`${testString}: ${callback() ? c.bold(`PASSED.`) : c.red.bold(`FAILED!`)}`));
 };
+const arrTest = [1, 2, 3];
 it('adds two numbers', () => expect(1 + 1).toEqual(2));
+it('has the correct length', () => expect(arrTest).toHaveLength(3));
