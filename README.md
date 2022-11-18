@@ -12,5 +12,3 @@ If you wish to see different results, change the values on the final line, such 
 or
 
 `it('adds two numbers', (): void => expect(1).toEqual(2));`
-
-### _YA FEELZ ME, DAWG?!_
