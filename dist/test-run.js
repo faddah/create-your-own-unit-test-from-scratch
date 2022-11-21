@@ -33,4 +33,4 @@ const it = (testString, callback) => {
 };
 const arrTest = [1, 2, 3];
 it('adds two numbers', () => expect(1 + 1).toEqual(2));
-it('has the correct length', () => expect([1, 2, 3], "yeah, whatever").toHaveLength(3));
+it('has the correct length', () => expect(arrTest).toHaveLength(3));
