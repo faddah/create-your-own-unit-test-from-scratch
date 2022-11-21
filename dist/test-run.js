@@ -8,7 +8,19 @@ const expect = (value) => {
         return value === compareValue;
     };
     const toHaveLength = (arrayLength) => {
-        return testArray.length === arrayLength;
+        try {
+            return testArray.length === arrayLength;
+        }
+        catch (err) {
+            if (!testArray) {
+                console.log(`Need an actual array: ${err}.`);
+                return false;
+            }
+            else {
+                console.log(`Something else f'd-up: ${err}.`);
+                return false;
+            }
+        }
     };
     return {
         toEqual,
@@ -21,4 +33,4 @@ const it = (testString, callback) => {
 };
 const arrTest = [1, 2, 3];
 it('adds two numbers', () => expect(1 + 1).toEqual(2));
-it('has the correct length', () => expect(arrTest).toHaveLength(3));
+it('has the correct length', () => expect([1, 2, 3], "yeah, whatever").toHaveLength(3));
