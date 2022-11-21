@@ -10,7 +10,17 @@ const expect = (value: number | any[]): any => {
 		return value === compareValue;
 	};
 	const toHaveLength = (arrayLength: number): boolean => {
-		return testArray.length === arrayLength;
+		try {
+			return testArray.length === arrayLength;
+		} catch (err) {
+			if (!testArray) {
+				console.log(`Need an actual array: ${err}.`);
+				return false;
+			} else {
+				console.log(`Something else f'd-up: ${err}.`);
+				return false;
+			}
+		}
 	}
 	return {
 		toEqual,
@@ -26,4 +36,4 @@ const it = (testString: string, callback: Function): void => {
 const arrTest: any[] = [1, 2, 3];
 
 it('adds two numbers', (): void => expect(1 + 1).toEqual(2));
-it('has the correct length', (): void => expect(arrTest).toHaveLength(3));
+it('has the correct length', (): void => expect([1, 2, 3], "yeah, whatever").toHaveLength(3));
